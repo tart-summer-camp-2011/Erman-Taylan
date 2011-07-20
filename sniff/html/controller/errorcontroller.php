@@ -19,6 +19,6 @@ class sniffErrorController extends sniffController {
    public function execute(sniffRequest $request, sniffResponse $response) {
        $response->trace = debug_backtrace();
        $response->error = 'An Error occoured:';
-       return new sniffErrorView();
+       //return new sniffErrorView();
    }
 }

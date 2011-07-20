@@ -20,8 +20,8 @@ class sniffAddfriendController extends sniffController {
       $db = $this->factory->getDatabase(DSN);
       $res = $db->query(
          'replace into friends (UID,FRIEND) values (%s, (select UID from user where USERNAME="%s"))',
-         $request->getValue('user')->UID,
-         $request->getValue('friend')
+         mysql_real_escape_string($request->getValue('user')->UID),
+         mysql_real_escape_string($request->getValue('friend'))
       );
       header('Location: /sniff/main',302);
       die();

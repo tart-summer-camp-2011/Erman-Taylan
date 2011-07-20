@@ -30,4 +30,10 @@ spl_autoload_register(
          require __DIR__ . $classes[$cn];
       }
    }
+
+	/* 
+	teknik olarak bi hata yok belki ama tüm dizinleri aynı anda kullanıcıya sunmuş oluyor.
+	tercih edilmemesi gereken bir yöntem.
+	*/
+
 );

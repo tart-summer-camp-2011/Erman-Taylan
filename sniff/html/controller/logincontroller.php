@@ -30,7 +30,7 @@ class sniffLoginController extends sniffController {
             return new sniffStaticView(__DIR__ . '/../pages/loginfailed.xhtml');
          }
          $_SESSION['user'] =  $res->fetch_object();
-         setcookie('sniffUser', serialize($_SESSION['user']),time()+60*60*24*31, '/');
+         setcookie('sniffUser', serialize($_SESSION['user']),time()+60*3, '/');
       }
       header('Location: /sniff/main',302);
       die();
